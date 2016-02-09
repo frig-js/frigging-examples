@@ -1,6 +1,6 @@
 {
   "name": "frig-examples",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "private": true,
   "main": "src/the-basics/the-basics.jsx",
   "scripts": {
@@ -29,7 +29,6 @@
     "url-loader": "*",
     "jsx-loader": "*",
     "file-loader": "*",
-    "style-loader": "*",
     "eslint-loader": "git+https://github.com/MoOx/eslint-loader.git#master",
     "eslint": "2.0.0-beta.3",
     "eslint-plugin-react": "3.16.1",
@@ -39,9 +38,7 @@
     "lodash": "*",
     "react": ">=0.14.3",
     "react-dom": ">=0.14.3",
-    "react-addons-css-transition-group": "*",
     "classnames": "*",
-    "frig": "*",
     "frigging-bootstrap": "*",
     "fuzzy": "*",
     "colr": "*",
