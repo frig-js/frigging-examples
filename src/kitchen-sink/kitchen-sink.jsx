@@ -30,7 +30,10 @@ class KitchenSinkExample extends React.Component {
   formOpts() {
     return {
       data: this.state.account,
-      onChange: (account) => this.setState({account}),
+      onChange: (account) => {
+        console.log("Latest Update From Frig", account)
+        this.setState({account})
+      },
       errors: {
         base: ["Test Error", "Moo"],
         email: ["This Error is a Test"],
