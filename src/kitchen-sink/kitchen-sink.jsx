@@ -100,6 +100,14 @@ class KitchenSinkExample extends React.Component {
                 "why not both?",
               ]}
             />
+            <Input
+              name="select_null_value_example"
+              options={[
+                {label: "Stuff", value: null},
+                [null, "Things"],
+                "why not both?",
+              ]}
+            />
           </div>
           <div className="row">
             <div className="col-xs-12">
