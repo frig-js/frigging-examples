@@ -44,12 +44,14 @@ class HorizontalLoginExample extends React.Component {
                 labelWidth={{xs: 6}}
                 type="boolean"
               />
-              <Submit
-                title="Let's do this!"
-                bsStyle="primary"
-                bsSize="lg"
-                block
-              />
+              <div className="col-xs-12">
+                <Submit
+                  title="Let's do this!"
+                  bsStyle="primary"
+                  bsSize="lg"
+                  block
+                />
+              </div>
             </div>
           </Form>
         </div>
