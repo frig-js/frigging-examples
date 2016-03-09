@@ -86,6 +86,12 @@ class KitchenSinkExample extends React.Component {
               type="float"
             />
             <Input
+              name="initial_number_value"
+              label="Initial Number Value"
+              type="float"
+              value="0"
+            />
+            <Input
               name="email"
             />
             <Input
