@@ -10,7 +10,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "frig": "*",
     "react-addons-css-transition-group": "*",
     "coffee-script": "1.9.3",
     "jsdom": "*",
@@ -41,8 +40,8 @@
     "react-dom": ">=0.14.3",
     "react-addons-css-transition-group": "*",
     "classnames": "*",
-    "frig": "*",
-    "frigging-bootstrap": "*",
+    "frig": "0.10.2",
+    "frigging-bootstrap": "0.9.3",
     "fuzzy": "*",
     "colr": "*",
     "numeral": "*"
