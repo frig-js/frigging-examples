@@ -38,8 +38,8 @@ module.exports =
     alias:
       "react": path.resolve('./node_modules/react')
       "react-dom": path.resolve('./node_modules/react-dom')
-      "frig": path.resolve('./node_modules/frig/src/index.js')
-      "frigging-bootstrap": path.resolve('./node_modules/frigging-bootstrap/src/javascripts/index.js')
+      # "frig": path.resolve('./node_modules/frig/src/index.js')
+      # "frigging-bootstrap": path.resolve('./node_modules/frigging-bootstrap/src/javascripts/index.js')
   devServer:
     contentBase: "./src",
   module:
@@ -50,7 +50,11 @@ module.exports =
       }
       {
         test: /\.jsx?$/
-        exclude: /^(node_modules|dist|scripts)/
+        include: [
+          path.resolve(__dirname, "src"),
+          # path.resolve(__dirname, "node_modules", "frig"),
+          # path.resolve(__dirname, "node_modules", "frigging-bootstrap"),
+        ],
         loader: "babel?stage=0"
       }
       {
