@@ -30,7 +30,10 @@ class KitchenSinkExample extends React.Component {
   formOpts() {
     return {
       data: this.state.account,
-      onChange: (account) => this.setState({account}),
+      onChange: (account) => {
+        console.log("Latest Update From Frig", account)
+        this.setState({account})
+      },
       errors: {
         base: ["Test Error", "Moo"],
         email: ["This Error is a Test"],
@@ -97,6 +100,14 @@ class KitchenSinkExample extends React.Component {
                 // 2. An array of the [value, label]
                 ["thing-value", "Things"],
                 // 3. A string. For scenarios where the label equals the value.
+                "why not both?",
+              ]}
+            />
+            <Input
+              name="select_null_value_example"
+              options={[
+                {label: "Stuff", value: null},
+                [null, "Things"],
                 "why not both?",
               ]}
             />
