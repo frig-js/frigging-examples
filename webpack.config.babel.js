@@ -58,7 +58,8 @@ module.exports = {
         test: /\.jsx?$/,
         loader: "babel",
         query: {
-          presets: ['es2015', 'react', 'stage-1']
+          presets: ['es2015', 'react', 'stage-1'],
+          plugins: ['babel-plugin-transform-decorators-legacy'],
         }
       }, {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
