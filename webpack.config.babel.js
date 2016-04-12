@@ -1,20 +1,17 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
-const path = require("path")
-const webpack = require("webpack")
-const _ = require("lodash")
+const path = require('path')
 const mkpath = require('mkpath')
-const fsExtra = require("fs-extra")
-const isProduction = process.env.FRIG_ENV === "production"
+const fsExtra = require('fs-extra')
+const isProduction = process.env.FRIG_ENV === 'production'
 const entry = {}
 
-const example = (name, type) => {
-  const relativePath = [name, name].join("/")
-  const htmlSrc = "./src/" + name + "/index.html"
-  const htmlDest = "./dist/" + name + "/index.html"
+const example = (name) => {
+  const relativePath = [name, name].join('/')
+  const htmlSrc = `./src/${name}/index.html`
+  const htmlDest = `./dist/${name}/index.html`
 
-  entry[relativePath] = "./src/" + relativePath + ".jsx"
+  entry[relativePath] = `./src/${relativePath}.jsx`
 
-  if (!isProduction) return
+  if (!isProduction) return undefined
 
   mkpath.sync(path.dirname(htmlDest))
 
@@ -22,49 +19,51 @@ const example = (name, type) => {
 }
 
 if (isProduction) {
-  example("the-basics")
+  example('the-basics')
 } else {
-  example("kitchen-sink")
-  example("horizontal-login")
-  example("the-basics")
-  example("two-way-data-binding")
-  example("component-functions")
+  example('kitchen-sink')
+  example('horizontal-login')
+  example('the-basics')
+  example('two-way-data-binding')
+  example('component-functions')
 }
 
 module.exports = {
-  entry: entry,
-  devtool: "inline-source-map",
+  entry,
+  devtool: 'inline-source-map',
   output: {
-    path: isProduction ? "./dist" : "./examples",
-    filename: "[name].js"
+    path: isProduction ? './dist' : './examples',
+    filename: '[name].js',
   },
   resolve: {
     alias: {
       react: path.resolve('./node_modules/react'),
-      "react-dom": path.resolve('./node_modules/react-dom'),
+      'react-dom': path.resolve('./node_modules/react-dom'),
       frig: path.resolve('./node_modules/frig/src/index.js'),
-      "frigging-bootstrap": path.resolve('./node_modules/frigging-bootstrap/src/javascripts/index.js')
-    }
+      'frigging-bootstrap': path.resolve(
+        './node_modules/frigging-bootstrap/src/javascripts/index.js'
+      ),
+    },
   },
   devServer: {
-    contentBase: "./src"
+    contentBase: './src',
   },
   module: {
     loaders: [
       {
         test: /\.styl$/,
-        loader: "style-loader!css-loader!stylus-loader"
+        loader: 'style-loader!css-loader!stylus-loader',
       }, {
         test: /\.jsx?$/,
-        loader: "babel",
+        loader: 'babel',
         query: {
           presets: ['es2015', 'react', 'stage-1'],
           plugins: ['babel-plugin-transform-decorators-legacy'],
-        }
+        },
       }, {
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
-        loader: "url-loader"
-      }
-    ]
-  }
+        loader: 'url-loader',
+      },
+    ],
+  },
 }
