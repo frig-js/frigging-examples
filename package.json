@@ -17,8 +17,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "classnames": "^2.2.3",
-    "coffee-loader": "*",
-    "coffee-script": "1.9.3",
     "colr": "^1.2.2",
     "css-loader": "0.17.0",
     "eslint": "2.0.0-beta.3",
