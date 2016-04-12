@@ -4,6 +4,8 @@
   "private": true,
   "main": "src/the-basics/the-basics.jsx",
   "scripts": {
+    "lint": "eslint src/ || true",
+    "lint-fail-fast": "eslint .",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "preversion": "FRIG_ENV=production ./node_modules/webpack/bin/webpack.js --progress --bail && git add dist",
     "postversion": "git push && git push --tags"
@@ -20,9 +22,9 @@
     "classnames": "^2.2.3",
     "colr": "^1.2.2",
     "css-loader": "0.17.0",
-    "eslint": "2.0.0-beta.3",
-    "eslint-loader": "git+https://github.com/MoOx/eslint-loader.git#master",
-    "eslint-plugin-react": "3.16.1",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "6.2.0",
+    "eslint-plugin-react": "^4.3.0",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.8.5",
     "frig": "*",
