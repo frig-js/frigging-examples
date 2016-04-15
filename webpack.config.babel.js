@@ -41,7 +41,7 @@ module.exports = {
       'react-dom': path.resolve('./node_modules/react-dom'),
       frig: path.resolve('./node_modules/frig/src/index.js'),
       'frigging-bootstrap': path.resolve(
-        './node_modules/frigging-bootstrap/src/javascripts/index.js'
+        './node_modules/frigging-bootstrap/src/js/index.js'
       ),
     },
   },
