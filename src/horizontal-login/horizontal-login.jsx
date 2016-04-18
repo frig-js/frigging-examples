@@ -2,7 +2,7 @@
 import Frig from 'frig'
 import FriggingBootstrap from 'frigging-bootstrap'
 Frig.defaultTheme(FriggingBootstrap)
-Frig.typeMapping.boolean = { component: 'switch' }
+Frig.typeMapping.boolean = { component: 'Switch' }
 // Libraries needed for each component
 import React from 'react'
 import ReactDOM from 'react-dom'
