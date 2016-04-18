@@ -1,25 +1,25 @@
 // One time theme setup (put this in an initialization file and call it once)
-import Frig from "frig"
-import FriggingBootstrap from "frigging-bootstrap"
+import Frig from 'frig'
+import FriggingBootstrap from 'frigging-bootstrap'
 Frig.defaultTheme(FriggingBootstrap)
-Frig.typeMapping.boolean = {component: "Switch"}
+Frig.typeMapping.boolean = { component: 'Switch' }
 // Libraries needed for each component
-import React from "react"
-import ReactDOM from "react-dom"
-import {Form, Input, Submit, FormErrorList, Fieldset, FieldsetText} from "frig"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Form, Input, Submit, FormErrorList, Fieldset, FieldsetText } from 'frig'
 
 class KitchenSinkExample extends React.Component {
-  displayName = "KitchenSinkExample"
+  displayName = 'KitchenSinkExample'
   state = {
     account: {
-      email: "me@test.com",
-      cost: "12.245",
-      password: "test",
+      email: 'me@test.com',
+      cost: '12.245',
+      password: 'test',
       shareSketchyInfo: false,
-      addresses: [{address: "55 Actual Place Rd."}, {}],
-      select_example: "thing-value",
-      colorTwo: "#999",
-      colorThree: "#000",
+      addresses: [{ address: '55 Actual Place Rd.' }, {}],
+      select_example: 'thing-value',
+      colorTwo: '#999',
+      colorThree: '#000',
     },
   }
 
@@ -31,23 +31,23 @@ class KitchenSinkExample extends React.Component {
     return {
       data: this.state.account,
       onChange: (account) => {
-        console.log("Latest Update From Frig", account)
-        this.setState({account})
+        console.log('Latest Update From Frig', account) // eslint-disable-line no-console
+        this.setState({ account })
       },
       errors: {
-        base: ["Test Error", "Moo"],
-        email: ["This Error is a Test"],
-        addresses: [{address: "This is a Nested Field Error Test"}],
+        base: ['Test Error', 'Moo'],
+        email: ['This Error is a Test'],
+        addresses: [{ address: 'This is a Nested Field Error Test' }],
       },
       saved: {
         select_example: true,
         time_of_day: true,
         colorTwo: true,
-        addresses: [{address: true}, {}],
+        addresses: [{ address: true }, {}],
       },
-      // errors: ["Test Error", "Moo"]
+      // errors: ['Test Error', 'Moo']
       onSubmit: this.onSubmit,
-      // layout: "horizontal"
+      // layout: 'horizontal'
     }
   }
 
@@ -66,7 +66,7 @@ class KitchenSinkExample extends React.Component {
           </div>
 
           <div className="row">
-            <FormErrorList/>
+            <FormErrorList />
           </div>
 
           <div className="row">
@@ -96,19 +96,19 @@ class KitchenSinkExample extends React.Component {
               options={[
                 // The 3 formats for options
                 // 1. An object with a label and a value (perfered)
-                {label: "Stuff", value: "stuff-value"},
+                { label: 'Stuff', value: 'stuff-value' },
                 // 2. An array of the [value, label]
-                ["thing-value", "Things"],
+                ['thing-value', 'Things'],
                 // 3. A string. For scenarios where the label equals the value.
-                "why not both?",
+                'why not both?',
               ]}
             />
             <Input
               name="select_null_value_example"
               options={[
-                {label: "Stuff", value: null},
-                [null, "Things"],
-                "why not both?",
+                { label: 'Stuff', value: null },
+                [null, 'Things'],
+                'why not both?',
               ]}
             />
           </div>
@@ -152,7 +152,7 @@ class KitchenSinkExample extends React.Component {
               handleWidth={100}
               onText="Enabled"
               offText="Disabled"
-              errors={["This error is an example", "As is this one"]}
+              errors={['This error is an example', 'As is this one']}
             />
             <Input
               name="time_of_night"
@@ -228,13 +228,13 @@ class KitchenSinkExample extends React.Component {
                 <div className="col-xs-12">
                   <h4>
                     <FieldsetText
-                      text={(index) => `Address #${index+1}`}
+                      text={(index) => `Address #${index + 1}`}
                     />
                   </h4>
                 </div>
-                <Input name="address"/>
-                <Input name="city"/>
-                <Input name="postal_code"/>
+                <Input name="address" />
+                <Input name="city" />
+                <Input name="postal_code" />
               </div>
             </Fieldset>
           </div>
@@ -246,21 +246,21 @@ class KitchenSinkExample extends React.Component {
           </div>
 
           <div className="row">
-            <Input name="shareSketchyInfo"/>
+            <Input name="shareSketchyInfo" />
             {
               this.state.account.shareSketchyInfo === true ?
                 [
-                  <Input name="socialSecurityNumber" key="ssn"/>,
-                  <Input name="fullName" key="fullName"/>,
+                  <Input name="socialSecurityNumber" key="ssn" />,
+                  <Input name="fullName" key="fullName" />,
                   <Input
                     name="eyeColor"
                     key ="eyeColor"
-                    options={["blue", "green", "red", "left"]}
+                    options={['blue', 'green', 'red', 'left']}
                   />,
                 ]
               : null
             }
-            <Submit title="Save"/>
+            <Submit title="Save" />
           </div>
         </div>
       </Form>
@@ -268,7 +268,7 @@ class KitchenSinkExample extends React.Component {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  var el = document.getElementById("kitchen-sink")
-  ReactDOM.render(<KitchenSinkExample/>, el)
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('kitchen-sink')
+  ReactDOM.render(<KitchenSinkExample />, el)
 })
