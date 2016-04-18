@@ -4,6 +4,7 @@
   "private": true,
   "main": "src/the-basics/the-basics.jsx",
   "scripts": {
+    "test": "true",
     "lint": "npm run lint:failfast || true",
     "lint:failfast": "eslint --ext .js,.jsx ./src",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
