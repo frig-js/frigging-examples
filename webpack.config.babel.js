@@ -35,25 +35,12 @@ module.exports = {
     path: isProduction ? './dist' : './examples',
     filename: '[name].js',
   },
-  resolve: {
-    alias: {
-      react: path.resolve('./node_modules/react'),
-      'react-dom': path.resolve('./node_modules/react-dom'),
-      frig: path.resolve('./node_modules/frig/src/index.js'),
-      'frigging-bootstrap': path.resolve(
-        './node_modules/frigging-bootstrap/src/js/index.js'
-      ),
-    },
-  },
   devServer: {
     contentBase: './src',
   },
   module: {
     loaders: [
       {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader',
-      }, {
         test: /\.jsx?$/,
         loader: 'babel',
         query: {
