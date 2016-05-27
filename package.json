@@ -7,7 +7,7 @@
     "test": "true",
     "lint": "npm run lint:failfast || true",
     "lint:failfast": "eslint --ext .js,.jsx ./src",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "webpack-dev-server --port 4238",
     "preversion": "FRIG_ENV=production ./node_modules/webpack/bin/webpack.js --progress --bail && git add dist",
     "postversion": "git push && git push --tags"
   },
