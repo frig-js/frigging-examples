@@ -104,10 +104,12 @@ class KitchenSinkExample extends React.Component {
               ]}
             />
             <Input
-              name="select_null_value_example"
+              name="select_blank_value_example"
               options={[
-                { label: 'Stuff', value: null },
-                [null, 'Things'],
+                ['', '-- select something --'],
+                { label: 'Stuff', value: 'real_stuff' },
+                { label: 'Other Stuff', value: 'other_stuff_value' },
+                ['ok', 'okay'],
                 'why not both?',
               ]}
             />
